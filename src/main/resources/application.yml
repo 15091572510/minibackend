@@ -1,0 +1,14 @@
+server:
+  port: 8081
+name: seven
+age: 22
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/minibacked?characterEncoding=UTF-8
+    username: root,
+    password: root,
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-location: classpath:mapper/*.xml
+  type-aliases-package: com.derucci.minibacked.pojo
+

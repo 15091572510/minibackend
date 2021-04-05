@@ -9,6 +9,6 @@ spring:
     password: root,
     driver-class-name: com.mysql.jdbc.Driver
 mybatis:
-  mapper-location: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.derucci.minibacked.pojo
 

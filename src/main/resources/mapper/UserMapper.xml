@@ -8,7 +8,7 @@
         <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
     </resultMap>-->
 
-    <select id="list" resultType="User">
+    <select id="list" resultType="com.derucci.minibackend.pojo.User">
         select * from user
     </select>
 </mapper>

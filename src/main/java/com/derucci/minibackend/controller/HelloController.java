@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
@@ -37,37 +38,4 @@ public class HelloController {
         outputStream.close();
 //        return bytes;
     }
-
-    public static void main(String[] args) {
-        File file = new File("C:/Users/Administrator/Desktop/img.txt");
-        InputStream inputStream = null;
-        OutputStream outputStream = null;
-        ZipInputStream zipInputStream = null;
-        ZipOutputStream zipOutputStream = null;
-        try {
-            inputStream = new FileInputStream(file);
-            outputStream = new FileOutputStream("C:/Users/Administrator/Desktop/img1.txt");
-            zipInputStream = new ZipInputStream(inputStream);
-            zipOutputStream = new ZipOutputStream(outputStream);
-            byte[] b = new byte[1024];
-            int read = 0;
-            while ((read = zipInputStream.read(b)) != -1) {
-                zipOutputStream.write(b);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                zipOutputStream.flush();
-                zipOutputStream.close();
-                outputStream.close();
-                zipInputStream.close();
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
 }
